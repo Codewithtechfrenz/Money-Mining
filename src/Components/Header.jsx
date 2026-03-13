@@ -46,7 +46,7 @@ const Header = () => {
       </div>
 
       {/* STORE BUTTONS */}
-      <div className="store-links">
+      {/* <div className="store-links">
         <img
           src={GooglePlay}
           alt="Get it on Google Play"
@@ -57,7 +57,7 @@ const Header = () => {
           alt="Download on App Store"
           onClick={handleStoreRedirect}
         />
-      </div>
+      </div> */}
 
     </header>
   );

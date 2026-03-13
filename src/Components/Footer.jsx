@@ -58,7 +58,7 @@ export default function Footer() {
               <Link to="/privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/refund">Refund</Link>
+              <Link to="/refund">Refund Policy</Link>
             </li>
           </ul>
         </div>
@@ -78,7 +78,7 @@ export default function Footer() {
           © 2026 Money Mining. All Rights Reserved.
         </div>
 
-        <div className="designed-by">
+        {/* <div className="designed-by">
           Designed by{" "}
           <a href="https://techfrenz.in/" target="_blank" rel="noopener noreferrer">
             <span style={{ color: "yellow" }}>Techfrenz</span>
@@ -91,7 +91,7 @@ export default function Footer() {
           >
             <span style={{ color: "yellow" }}>SDGD</span>
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
