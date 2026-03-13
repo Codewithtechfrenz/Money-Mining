@@ -1,0 +1,508 @@
+.investment-section {
+  padding: 100px 20px;
+  background: black;
+  font-family: "Maiandra GD", sans-serif;
+}
+
+/* Heading */
+.investment-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+  font-family: "Maiandra OT GD Rm W01 DemiBold", sans-serif;
+}
+
+.investment-heading h1 {
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.aurora-text {
+  font-weight: 900;
+  font-size: 7rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    120deg,
+    #bb3e03 0%,
+    #ffd700 20%,
+    #bb3e03 40%,
+    #ffd700 50%,
+    #bb3e03 60%,
+    #ffd700 80%,
+    #bb3e03 100%
+  );
+
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShine 4s linear infinite;
+}
+
+.aurora-text::after {
+  content: "Money Mining";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  color: #ffd700;
+  filter: blur(12px);
+  opacity: 0.4;
+}
+
+@keyframes goldShine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Two Column Layout */
+.investment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.investment-left {
+  width: 50%;
+}
+
+.investment-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Paragraph */
+.investment-desc {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.investment-desc.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* List */
+.investment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.investment-list li {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.investment-list li::before {
+  content: "✔";
+  color: #f6c400;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.investment-list.in-view li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading Animation */
+.animate-heading {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease;
+}
+
+.animate-heading.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slider Styles */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Dots */
+.dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 3px rgba(255, 215, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 16px;
+  height: 16px;
+  background: #FFD700;
+  box-shadow: 0 0 8px #FFD700;
+}
+
+/* ============================= */
+/* DESKTOP XL : 1441px+ */
+/* ============================= */
+
+@media screen and (min-width:1441px){
+
+.investment-section{
+padding:120px 20px;
+}
+
+.investment-heading h1{
+font-size:5.5rem;
+}
+
+.aurora-text{
+font-size:7.5rem;
+}
+
+.investment-content{
+max-width:1600px;
+}
+
+.slider{
+max-width:720px;
+height:380px;
+}
+
+.investment-desc{
+font-size:19px;
+}
+
+.investment-list li{
+font-size:17px;
+}
+
+}
+
+/* ============================= */
+/* LAPTOP LARGE : 1025px → 1440px */
+/* ============================= */
+
+@media screen and (min-width:1025px) and (max-width:1440px){
+
+.investment-section{
+padding:90px 20px;
+}
+
+.investment-heading h1{
+font-size:4.5rem;
+}
+
+.aurora-text{
+font-size:5.5rem;
+}
+
+.investment-content{
+max-width:1200px;
+gap:50px;
+}
+
+.investment-left{
+width:50%;
+}
+
+.investment-right{
+width:45%;
+}
+
+.investment-desc{
+font-size:17px;
+}
+
+.investment-list li{
+font-size:15px;
+}
+
+.slider{
+max-width:580px;
+height:330px;
+}
+
+}
+
+/* ============================= */
+/* LAPTOP : 769px → 1024px */
+/* ============================= */
+
+@media screen and (min-width:769px) and (max-width:1024px){
+
+.investment-section{
+padding:80px 18px;
+}
+
+.investment-heading h1{
+font-size:3.4rem;
+}
+
+.aurora-text{
+font-size:4.5rem;
+}
+
+.investment-content{
+flex-direction:column;
+align-items:center;
+gap:45px;
+}
+
+.investment-left{
+width:100%;
+text-align:center;
+}
+
+.investment-right{
+width:100%;
+}
+
+.investment-desc{
+font-size:16px;
+max-width:700px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.investment-list{
+max-width:700px;
+margin:auto;
+}
+
+.slider{
+max-width:600px;
+height:320px;
+}
+
+}
+
+/* ============================= */
+/* TABLET : 426px → 768px */
+/* ============================= */
+
+@media screen and (min-width:426px) and (max-width:768px){
+
+.investment-content{
+flex-direction:column;
+gap:50px;
+}
+
+.investment-left{
+width:100%;
+padding:0 24px;
+text-align:center;
+order:1;
+}
+
+.investment-right{
+width:100%;
+padding:0 16px;
+order:2;
+}
+
+.investment-heading h1{
+font-size:2.4rem!important;
+}
+
+.aurora-text{
+font-size:3.3rem!important;
+}
+
+.slider{
+width:100%;
+max-width:420px;
+height:320px;
+margin:0 auto;
+}
+
+}
+
+
+/* ============================= */
+/* MOBILE LARGE : 376px → 425px */
+/* ============================= */
+
+@media screen and (min-width:376px) and (max-width:425px){
+
+.investment-section{
+padding:70px 12px;
+}
+
+.investment-left{
+width:100%;
+padding:0 18px;
+text-align:center;
+}
+
+.investment-right{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+width:100%;
+}
+
+.investment-heading h1{
+font-size:2.1rem!important;
+}
+
+.aurora-text{
+font-size:2.8rem!important;
+}
+
+.investment-desc{
+font-size:0.95rem;
+}
+
+.slider{
+width:100%;
+max-width:340px;
+height:260px;
+margin:0 auto;
+}
+
+}
+
+
+/* ============================= */
+/* MOBILE MEDIUM : 321px → 375px */
+/* ============================= */
+
+@media screen and (min-width:321px) and (max-width:375px){
+
+.investment-section{
+padding:65px 10px;
+}
+
+.investment-left{
+width:100%;
+padding:0 16px;
+}
+
+.investment-right{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+width:100%;
+}
+
+.investment-heading h1{
+font-size:2rem!important;
+}
+
+.aurora-text{
+font-size:2.6rem!important;
+}
+
+.investment-desc{
+font-size:0.92rem;
+}
+
+.slider{
+width:100%;
+max-width:300px;
+height:240px;
+margin:0 auto;
+}
+
+}
+
+
+/* ============================= */
+/* MOBILE SMALL : 0px → 320px */
+/* ============================= */
+
+@media screen and (min-width:0px) and (max-width:320px){
+
+.investment-section{
+padding:60px 8px;
+}
+
+.investment-left{
+width:100%;
+padding:0 14px;
+}
+
+.investment-right{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+width:100%;
+}
+
+.investment-heading h1{
+font-size:1.6rem!important;
+}
+
+.aurora-text{
+font-size:2.4rem!important;
+}
+
+.investment-desc{
+font-size:0.88rem;
+}
+
+
+.slider{
+width:100%;
+max-width:260px;
+height:220px;
+margin:0 auto;
+}
+
+}

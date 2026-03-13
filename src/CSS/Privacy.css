@@ -1,0 +1,723 @@
+/* ===================================== */
+/* Global */
+/* ===================================== */
+
+html,
+body {
+  scroll-behavior: smooth;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+/* ===================================== */
+/* Layout */
+/* ===================================== */
+
+.privacy-layout {
+  display: flex;
+  min-height: 100vh;
+  margin-left: 320px;
+  background: #000;
+  font-family: "Maiandra GD", sans-serif;
+}
+
+/* ===================================== */
+/* Fixed Header */
+/* ===================================== */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1200;
+    background: #111;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .privacy-header-wrapper .header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+/* ===================================== */
+/* Sidebar */
+/* ===================================== */
+
+.privacy-sidebar {
+  width: 280px;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px 15px;
+  height: calc(100vh - 160px);
+  position: fixed;
+  left: 20px;
+  top: 130px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+/* Sidebar List */
+.privacy-sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.privacy-sidebar li {
+  margin: 0;
+}
+
+/* Sidebar Links */
+.privacy-sidebar a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.privacy-sidebar a:hover {
+  background-color: #FFD400;
+  color: #000;
+  transform: translateX(5px);
+}
+
+/* Active Section Highlight */
+.privacy-sidebar a.active {
+  background-color: #FFD400;
+  color: #000;
+  font-weight: 600;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(255, 212, 0, 0.4);
+}
+
+/* ===================================== */
+/* Content */
+/* ===================================== */
+
+.privacy-content {
+  flex: 1;
+  padding: 60px;
+  background: #121212;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  margin: 30px;
+  margin-top: 130px;
+  min-height: calc(100vh - 160px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Page Title */
+.privacy-content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+/* Section Headings */
+.privacy-content h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 4px solid #FFD400;
+  padding-left: 10px;
+  font-size: 1.5rem;
+  color: #FFD400;
+}
+
+/* Paragraph Text */
+.privacy-content p {
+  color: #ddd;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+/* ===================================== */
+/* Smooth Scroll Offset Fix */
+/* ===================================== */
+
+.privacy-content h2[id] {
+  scroll-margin-top: 140px;
+}
+
+/* =============================== */
+/* List Styling - Better Line Height */
+/* =============================== */
+
+.privacy-content ul {
+  padding-left: 22px;
+}
+
+/* Apply line height to every list item */
+.privacy-content ul li {
+  line-height: 2;            /* ✅ Increase spacing between lines */
+  margin-bottom: 12px;        /* ✅ Space between list items */
+  color: #ddd;
+  letter-spacing: 0.3px;
+}
+
+/* If you also use ordered lists */
+.privacy-content ol li {
+  line-height: 2;
+  margin-bottom: 12px;
+  color: #ddd;
+  letter-spacing: 0.3px;
+}
+
+/* ================================= */
+/* Continue Button Section */
+/* ================================= */
+
+.privacy-continue-section {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+/* Button Styling */
+.privacy-continue-btn {
+  background: #ffd400;
+  color: #000;
+  border: none;
+  padding: 14px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 212, 0, 0.4);
+}
+
+.privacy-continue-btn:hover {
+  transform: translateY(-4px);
+  background: #ffbf00;
+  box-shadow: 0 10px 25px rgba(255, 212, 0, 0.6);
+}
+
+/* ===================================================== */
+/* ✅ Laptop L - 1440px Responsive */
+/* ===================================================== */
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    margin-left: 340px; /* Extra spacing for large screens */
+    gap: 30px;
+  }
+
+  /* ================= Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1200;
+    background: #111;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .privacy-header-wrapper .header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ================= Sidebar ================= */
+
+  .privacy-sidebar {
+    width: 300px;
+    top: 150px; /* Push below fixed header */
+    height: calc(100vh - 200px);
+    padding: 25px;
+  }
+
+  .privacy-sidebar ul {
+    gap: 18px; /* More spacing for clean large layout */
+  }
+
+  .privacy-sidebar a {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .privacy-sidebar a.active {
+    box-shadow: 0 6px 18px rgba(255, 212, 0, 0.5);
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 40px;
+    margin-top: 150px;
+    padding: 80px;
+    border-radius: 20px;
+  }
+
+  .privacy-content h1 {
+    font-size: 3rem;
+  }
+
+  .privacy-content h2 {
+    font-size: 1.7rem;
+    margin-top: 50px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  .privacy-content ul {
+    padding-left: 30px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 80px;
+  }
+
+  .privacy-continue-btn {
+    padding: 16px 40px;
+    font-size: 17px;
+    border-radius: 12px;
+  }
+
+}
+
+/* ===================================================== */
+/* ✅ Laptop - 1024px Responsive */
+/* ===================================================== */
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    margin-left: 300px;
+    gap: 20px;
+  }
+
+  /* ================= Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1200;
+    background: #111;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .privacy-header-wrapper .header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ================= Sidebar ================= */
+
+  .privacy-sidebar {
+    width: 250px;
+    top: 130px;
+    height: calc(100vh - 170px);
+    padding: 20px;
+  }
+
+  .privacy-sidebar ul {
+    gap: 12px;
+  }
+
+  .privacy-sidebar a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .privacy-sidebar a.active {
+    box-shadow: 0 4px 14px rgba(255, 212, 0, 0.4);
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 25px;
+    margin-top: 130px;
+    padding: 60px;
+    border-radius: 15px;
+  }
+
+  .privacy-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .privacy-content h2 {
+    font-size: 1.4rem;
+    margin-top: 40px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .privacy-content ul {
+    padding-left: 25px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 60px;
+  }
+
+  .privacy-continue-btn {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+
+}
+
+/* ===================================================== */
+/* ✅ Tablet - 768px (Hide Sidebar Completely) */
+/* ===================================================== */
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Hide Sidebar ================= */
+
+  .privacy-sidebar {
+    display: none;
+  }
+
+  /* ================= Fixed Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1200;
+    background: #111;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 20px;
+    margin-top: 130px; /* Avoid header overlap */
+    padding: 35px 20px;
+    border-radius: 12px;
+  }
+
+  .privacy-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .privacy-content h2 {
+    font-size: 1.2rem;
+    margin-top: 30px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .privacy-content ul {
+    padding-left: 18px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 40px;
+  }
+
+  .privacy-continue-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+}
+
+
+/* ===================================================== */
+/* ✅ Mobile L - 425px (Sidebar Hidden) */
+/* ===================================================== */
+
+@media screen and (max-width: 425px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Hide Sidebar ================= */
+
+  .privacy-sidebar {
+    display: none;
+  }
+
+  /* ================= Fixed Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1300;
+    background: #111;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 15px;
+    margin-top: 110px; /* Prevent header overlap */
+    padding: 25px 15px;
+    border-radius: 10px;
+  }
+
+  .privacy-content h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .privacy-content h2 {
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .privacy-content ul {
+    padding-left: 15px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 30px;
+  }
+
+  .privacy-continue-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+}
+
+/* ===================================================== */
+/* ✅ Mobile M - 375px (Sidebar Hidden) */
+/* ===================================================== */
+
+@media screen and (max-width: 375px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Hide Sidebar ================= */
+
+  .privacy-sidebar {
+    display: none;
+  }
+
+  /* ================= Fixed Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1300;
+    background: #111;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  .privacy-header-wrapper .header img {
+    max-height: 60px;
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 10px;
+    margin-top: 100px; /* Prevent header overlap */
+    padding: 20px 12px;
+    border-radius: 8px;
+  }
+
+  .privacy-content h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .privacy-content h2 {
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 11.5px;
+    line-height: 1.6;
+  }
+
+  .privacy-content ul {
+    padding-left: 12px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 25px;
+  }
+
+  .privacy-continue-btn {
+    width: 100%;
+    padding: 9px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+}
+
+
+/* ===================================================== */
+/* ✅ Mobile S - 320px (Ultra Small Devices) */
+/* ===================================================== */
+
+@media screen and (max-width: 320px) {
+
+  /* ================= Layout ================= */
+
+  .privacy-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Hide Sidebar ================= */
+
+  .privacy-sidebar {
+    display: none;
+  }
+
+  /* ================= Fixed Header ================= */
+
+  .privacy-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1400;
+    background: #111;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  .privacy-header-wrapper .header img {
+    max-height: 55px;
+  }
+
+  /* ================= Content ================= */
+
+  .privacy-content {
+    margin: 8px;
+    margin-top: 95px; /* Prevent header overlap */
+    padding: 16px 10px;
+    border-radius: 6px;
+  }
+
+  .privacy-content h1 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .privacy-content h2 {
+    font-size: 0.85rem;
+    margin-top: 18px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  .privacy-content ul {
+    padding-left: 10px;
+  }
+
+  /* ================= Lists Spacing ================= */
+
+  .privacy-content ul li {
+    margin-bottom: 6px;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .privacy-continue-section {
+    margin-top: 20px;
+  }
+
+  .privacy-continue-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 11px;
+    border-radius: 5px;
+  }
+
+}
+

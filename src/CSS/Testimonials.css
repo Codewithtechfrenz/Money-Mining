@@ -1,0 +1,466 @@
+/* =========================
+   GLOBAL FIX
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+overflow-x:hidden;
+}
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+.testimonials{
+padding:60px 20px;
+background:black;
+text-align:center;
+width:100%;
+overflow:hidden;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+font-size:5.3rem;
+font-weight:700;
+margin-bottom:25px;
+color:white;
+font-family:"Maiandra OT GD Rm W01 DemiBold", sans-serif;
+}
+
+.title span{
+color:#f6c400;
+}
+
+/* =========================
+   INTRO TEXT
+========================= */
+
+.intro-text{
+font-size:1.8rem;
+color:#e5e7eb;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+font-family:"Maiandra GD", sans-serif;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.cards-grid{
+display:grid;
+gap:40px;
+grid-template-columns:repeat(3,1fr);
+justify-content:center;
+max-width:1200px;
+margin:0 auto;
+padding:0 20px;
+perspective:1200px;
+width:100%;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+position:relative;
+background:#f6c400;
+border-radius:12px;
+padding:24px 20px;
+max-width:380px;
+width:100%;
+margin:0 auto;
+text-align:center;
+overflow:hidden;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.07);
+
+transform-origin:right center;
+transition:
+transform 0.45s cubic-bezier(0.22,1,0.36,1),
+box-shadow 0.45s ease;
+
+will-change:transform;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.card{
+transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+transform:translateY(0) rotateZ(0deg) rotateY(0deg);
+}
+
+.card:hover{
+transform:translateY(-22px) rotateZ(2deg) rotateY(6deg);
+box-shadow:0 26px 55px rgba(0,0,0,0.28);
+}
+
+/* =========================
+   RUPEE WATERMARK
+========================= */
+
+.card::before{
+content:"₹";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%) rotate(-15deg);
+font-size:14rem;
+font-weight:900;
+color:rgba(29,26,26,0.15);
+pointer-events:none;
+z-index:0;
+}
+
+.card>*{
+position:relative;
+z-index:1;
+}
+
+/* =========================
+   NAME
+========================= */
+
+.name{
+font-size:1.2rem;
+font-weight:600;
+margin-bottom:8px;
+color:#111;
+font-family:"Maiandra OT GD Rm W01 DemiBold", sans-serif;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text{
+font-size:0.95rem;
+color:#111;
+line-height:1.6;
+margin-bottom:20px;
+margin-top:50px;
+font-family:"Maiandra GD", sans-serif;
+}
+
+/* =========================
+   RATING
+========================= */
+
+.rating{
+position:absolute;
+top:14px;
+right:16px;
+display:flex;
+align-items:center;
+gap:4px;
+font-size:0.95rem;
+font-weight:600;
+color:#111;
+}
+
+.rating .star{
+color:#ee0707;
+font-size:1rem;
+}
+
+.titles{
+font-size:0.9rem;
+color:#181717;
+margin-top:4px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade-left,
+.fade-right{
+opacity:0;
+transition:all 0.9s ease;
+}
+
+.fade-left{
+transform:translateX(-80px);
+}
+
+.fade-right{
+transform:translateX(80px);
+}
+
+.show{
+opacity:1;
+transform:translateX(0);
+}
+
+/* =========================
+   LARGE DESKTOP : 1441px+
+========================= */
+
+@media screen and (min-width:1441px){
+
+.testimonials{
+padding:90px 120px;
+}
+
+.title{
+font-size:6rem;
+margin-bottom:30px;
+}
+
+.intro-text{
+font-size:2rem;
+max-width:1000px;
+margin-bottom:70px;
+}
+
+.cards-grid{
+grid-template-columns:repeat(3,1fr);
+gap:50px;
+padding:0 40px;
+}
+
+.card{
+max-width:420px;
+padding:26px 22px;
+}
+
+.card::before{
+font-size:18rem;
+}
+
+.text{
+font-size:1rem;
+margin-top:55px;
+}
+
+.name{
+font-size:1.3rem;
+}
+
+}
+
+/* =========================
+   DESKTOP : 1025px → 1440px
+========================= */
+
+@media screen and (min-width:1025px) and (max-width:1440px){
+
+.testimonials{
+padding:70px 40px;
+}
+
+.title{
+font-size:4.2rem;
+margin-bottom:20px;
+}
+
+.intro-text{
+font-size:1.5rem;
+max-width:750px;
+margin-bottom:50px;
+}
+
+.cards-grid{
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:0 20px;
+}
+
+.card{
+max-width:360px;
+padding:22px 18px;
+}
+
+.card::before{
+font-size:14rem;
+}
+
+.text{
+font-size:0.9rem;
+margin-top:40px;
+}
+
+.name{
+font-size:1.1rem;
+}
+
+}
+
+/* =========================
+   LAPTOP : 769px → 1024px
+========================= */
+
+@media screen and (min-width:769px) and (max-width:1024px){
+
+.title{
+font-size:3.6rem;
+}
+
+.intro-text{
+font-size:1.4rem;
+margin-bottom:45px;
+}
+
+.cards-grid{
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:0 15px;
+}
+
+.card{
+max-width:320px;
+padding:20px 16px;
+}
+
+.card::before{
+font-size:12rem;
+}
+
+}
+
+/* =========================
+   TABLET : 426px → 768px
+========================= */
+
+@media screen and (min-width:426px) and (max-width:768px){
+
+.title{
+font-size:3rem;
+}
+
+.intro-text{
+font-size:1.3rem;
+margin-bottom:40px;
+}
+
+.cards-grid{
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+padding:0 10px;
+}
+
+.card{
+max-width:340px;
+}
+
+.card::before{
+font-size:11rem;
+}
+
+}
+
+/* =========================
+   MOBILE LARGE : 376px → 425px
+========================= */
+
+@media screen and (min-width:376px) and (max-width:425px){
+
+.title{
+font-size:2.6rem;
+}
+
+.intro-text{
+font-size:1.1rem;
+margin-bottom:35px;
+padding:0 10px;
+}
+
+.cards-grid{
+grid-template-columns:1fr;
+gap:22px;
+padding:0 10px;
+}
+
+.card{
+max-width:360px;
+}
+
+.card::before{
+font-size:9rem;
+}
+
+}
+
+/* =========================
+   MOBILE MEDIUM : 321px → 375px
+========================= */
+
+@media screen and (min-width:321px) and (max-width:375px){
+
+.title{
+font-size:2.2rem;
+}
+
+.intro-text{
+font-size:1rem;
+margin-bottom:30px;
+}
+
+.cards-grid{
+grid-template-columns:1fr;
+gap:20px;
+padding:0 10px;
+}
+
+.card{
+max-width:320px;
+}
+
+.card::before{
+font-size:8rem;
+}
+
+}
+
+/* =========================
+   MOBILE SMALL : 0px → 320px
+========================= */
+
+@media screen and (max-width:320px){
+
+.title{
+font-size:1.9rem;
+}
+
+.intro-text{
+font-size:0.95rem;
+margin-bottom:28px;
+}
+
+.cards-grid{
+grid-template-columns:1fr;
+gap:18px;
+padding:0 8px;
+}
+
+.card{
+max-width:290px;
+padding:18px 14px;
+}
+
+.card::before{
+font-size:7rem;
+}
+
+.text{
+font-size:0.85rem;
+margin-top:35px;
+}
+
+}

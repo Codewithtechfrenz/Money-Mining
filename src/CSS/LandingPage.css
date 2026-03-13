@@ -1,0 +1,329 @@
+/* ================================= */
+/* LANDING PAGE STYLING */
+/* ================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  background: #000;
+  min-height: 50vh;
+  font-family: "Maiandra GD", sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================================= */
+/* CTA SECTION */
+/* ================================= */
+
+.cta {
+  background: #f4c400;
+  border-radius: 20px;
+  padding: 60px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1400px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Text Content */
+.cta-content {
+  max-width: 650px;
+  width: 100%;
+}
+
+.cta-content h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.cta-content p {
+  font-size: 16px;
+  color: #111;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* Button */
+.cta-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cta-btn span {
+  font-size: 18px;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* ===== LARGE DESKTOP : 1441px+ ===== */
+
+@media screen and (min-width:1441px){
+
+.page{
+padding:120px 80px;
+}
+
+.cta{
+max-width:1600px;
+padding:70px 70px;
+gap:80px;
+border-radius:22px;
+}
+
+.cta-content{
+max-width:720px;
+}
+
+.cta-content h1{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.cta-content p{
+font-size:18px;
+max-width:620px;
+}
+
+.cta-btn{
+padding:16px 34px;
+font-size:17px;
+}
+
+.cta-btn span{
+font-size:20px;
+}
+
+}
+
+
+
+/* ===== DESKTOP : 1025px → 1440px ===== */
+
+@media screen and (min-width:1025px) and (max-width:1440px){
+
+.page{
+padding:90px 40px;
+}
+
+.cta{
+max-width:1200px;
+padding:55px 45px;
+gap:50px;
+border-radius:18px;
+}
+
+.cta-content{
+max-width:600px;
+}
+
+.cta-content h1{
+font-size:38px;
+margin-bottom:14px;
+}
+
+.cta-content p{
+font-size:15px;
+max-width:500px;
+}
+
+.cta-btn{
+padding:13px 26px;
+font-size:14px;
+}
+
+.cta-btn span{
+font-size:16px;
+}
+
+}
+
+
+
+
+/* ===== LAPTOP : 769px → 1024px ===== */
+
+@media screen and (min-width:769px) and (max-width:1024px){
+
+.page{
+padding:80px 30px;
+}
+
+.cta{
+padding:50px 40px;
+gap:40px;
+max-width:1000px;
+}
+
+.cta-content h1{
+font-size:34px;
+}
+
+.cta-content p{
+font-size:15px;
+max-width:480px;
+}
+
+.cta-btn{
+padding:12px 24px;
+font-size:14px;
+}
+
+}
+
+
+
+
+/* ===== TABLET : 426px → 768px ===== */
+
+@media screen and (min-width:426px) and (max-width:768px){
+
+.page{
+padding:70px 25px;
+}
+
+.cta{
+flex-direction:column;
+align-items:flex-start;
+gap:30px;
+padding:45px 35px;
+}
+
+.cta-content h1{
+font-size:30px;
+}
+
+.cta-content p{
+font-size:14px;
+max-width:100%;
+}
+
+.cta-btn{
+padding:12px 22px;
+font-size:14px;
+}
+
+}
+
+
+
+/* ===== MOBILE LARGE : 376px → 425px ===== */
+
+@media screen and (min-width:376px) and (max-width:425px){
+
+.page{
+padding:60px 20px;
+}
+
+.cta{
+flex-direction:column;
+gap:25px;
+padding:40px 28px;
+}
+
+.cta-content h1{
+font-size:26px;
+}
+
+.cta-content p{
+font-size:13px;
+}
+
+.cta-btn{
+padding:11px 20px;
+font-size:13px;
+}
+
+}
+
+
+
+/* ===== MOBILE MEDIUM : 321px → 375px ===== */
+
+@media screen and (min-width:321px) and (max-width:375px){
+
+.page{
+padding:55px 18px;
+}
+
+.cta{
+flex-direction:column;
+gap:22px;
+padding:35px 24px;
+}
+
+.cta-content h1{
+font-size:24px;
+}
+
+.cta-content p{
+font-size:12.5px;
+}
+
+.cta-btn{
+padding:10px 18px;
+font-size:12.5px;
+}
+
+}
+
+
+
+/* ===== MOBILE SMALL : 0px → 320px ===== */
+
+@media screen and (max-width:320px){
+
+.page{
+padding:50px 16px;
+}
+
+.cta{
+flex-direction:column;
+gap:20px;
+padding:30px 20px;
+border-radius:16px;
+}
+
+.cta-content h1{
+font-size:22px;
+}
+
+.cta-content p{
+font-size:12px;
+}
+
+.cta-btn{
+padding:9px 16px;
+font-size:12px;
+}
+
+}

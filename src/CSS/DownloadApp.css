@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== SECTION ===== */
+.download-section {
+  background: #000;
+  color: #fff;
+  padding: 120px 80px;
+  font-family: "Maiandra OT GD Rm W01 DemiBold", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== CONTAINER ===== */
+.download-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  margin-top: 100px;
+}
+
+/* ===== LEFT TEXT ===== */
+.download-text {
+  flex: 1;
+}
+
+.download-text h2 {
+  font-size: 7.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  width: 120%; /* reduced from 140% to prevent overflow */
+}
+
+.download-text h2 span {
+  color: #e6e6e6;
+}
+
+.download-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cfcfcf;
+  width: 120%; /* reduced from 140% */
+  margin-bottom: 35px;
+}
+
+/* ===== BUTTON ===== */
+.download-btn {
+  background: linear-gradient(90deg, #d88c00, #f4b400);
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(244, 180, 0, 0.4);
+}
+
+/* ===== RIGHT IMAGE ===== */
+.download-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.download-image img {
+  width: 380px;
+  max-width: 80%;
+}
+
+/* ===== ANIMATIONS ===== */
+
+.download-text,
+.download-image {
+  opacity: 0;
+}
+
+.animate-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-right {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== LARGE DESKTOP : 1441px+ ===== */
+
+@media screen and (min-width:1441px){
+
+.download-section{
+padding:140px 120px;
+}
+
+.download-container{
+max-width:1600px;
+gap:100px;
+margin-top:120px;
+}
+
+/* Text */
+
+.download-text h2{
+font-size:7rem;
+width:120%;
+}
+
+.download-text p{
+font-size:15px;
+width:120%;
+font-family: "Maiandra GD", sans-serif;
+line-height: 2.5;
+}
+
+/* Button */
+
+.download-btn{
+font-size:20px;
+padding:16px 36px;
+}
+
+/* Image */
+
+.download-image img{
+width:420px;
+max-width:90%;
+}
+
+}
+
+
+/* ===== DESKTOP : 1025px → 1440px ===== */
+
+@media screen and (min-width:1025px) and (max-width:1440px){
+
+.download-section{
+padding:100px 60px;
+}
+
+.download-container{
+max-width:1200px;
+gap:60px;
+margin-top:80px;
+}
+
+/* Text */
+
+.download-text h2{
+font-size:5rem;
+width:110%;
+}
+
+.download-text p{
+font-size:17px;
+font-family: "Maiandra GD", sans-serif;
+width:110%;
+}
+
+/* Button */
+
+.download-btn{
+font-size:17px;
+padding:12px 28px;
+}
+
+/* Image */
+
+.download-image img{
+width:340px;
+max-width:85%;
+}
+
+}
+
+
+
+/* ===== LAPTOP : 769px → 1024px ===== */
+
+@media screen and (min-width:769px) and (max-width:1024px){
+
+.download-section{
+padding:90px 50px;
+}
+
+.download-container{
+max-width:1000px;
+gap:50px;
+margin-top:70px;
+}
+
+/* Text */
+
+.download-text h2{
+font-size:3.8rem;
+width:100%;
+}
+
+.download-text p{
+font-size:16px;
+font-family: "Maiandra GD", sans-serif;
+width:100%;
+}
+
+/* Button */
+
+.download-btn{
+font-size:16px;
+padding:12px 26px;
+}
+
+/* Image */
+
+.download-image img{
+width:300px;
+max-width:90%;
+}
+
+}
+
+
+
+/* ===== TABLET : 426px → 768px ===== */
+
+@media screen and (min-width:426px) and (max-width:768px){
+
+.download-section{
+padding:80px 40px;
+}
+
+/* Stack layout */
+
+.download-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:50px;
+margin-top:60px;
+}
+
+/* Text */
+
+.download-text h2{
+font-size:4rem;
+width:100%;
+}
+
+.download-text p{
+font-size:16px;
+width:100%;
+margin-bottom:30px;
+font-family: "Maiandra GD", sans-serif;
+}
+
+/* Button */
+
+.download-btn{
+font-size:16px;
+padding:12px 28px;
+}
+
+/* Image */
+
+.download-image{
+justify-content:center;
+}
+
+.download-image img{
+width:280px;
+max-width:100%;
+}
+
+}
+
+
+
+/* ===== MOBILE LARGE : 376px → 425px ===== */
+
+@media screen and (min-width:376px) and (max-width:425px){
+
+.download-section{
+padding:70px 25px;
+}
+
+/* Stack layout */
+
+.download-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:40px;
+margin-top:50px;
+}
+
+/* Heading */
+
+.download-text h2{
+font-size:3rem;
+width:100%;
+}
+
+/* Paragraph */
+
+.download-text p{
+font-size:15px;
+width:100%;
+margin-bottom:25px;
+font-family: "Maiandra GD", sans-serif;
+}
+
+/* Button */
+
+.download-btn{
+font-size:15px;
+padding:10px 24px;
+}
+
+/* Image */
+
+.download-image{
+justify-content:center;
+}
+
+.download-image img{
+width:240px;
+max-width:100%;
+}
+
+}
+
+
+
+/* ===== MOBILE MEDIUM : 321px → 375px ===== */
+
+@media screen and (min-width:321px) and (max-width:375px){
+
+.download-section{
+padding:60px 20px;
+}
+
+/* Stack layout */
+
+.download-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:35px;
+margin-top:45px;
+}
+
+/* Heading */
+
+.download-text h2{
+font-size:2.4rem;
+width:100%;
+}
+
+/* Paragraph */
+
+.download-text p{
+font-size:14px;
+width:100%;
+margin-bottom:22px;
+font-family: "Maiandra GD", sans-serif;
+}
+
+/* Button */
+
+.download-btn{
+font-size:14px;
+padding:9px 22px;
+}
+
+/* Image */
+
+.download-image{
+justify-content:center;
+}
+
+.download-image img{
+width:210px;
+max-width:100%;
+}
+
+}
+
+
+
+/* ===== MOBILE SMALL : 0px → 320px ===== */
+
+@media screen and (max-width:320px){
+
+.download-section{
+padding:50px 16px;
+}
+
+/* Stack layout */
+
+.download-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:30px;
+margin-top:35px;
+}
+
+/* Heading */
+
+.download-text h2{
+font-size:2rem;
+width:100%;
+line-height:1.2;
+}
+
+/* Paragraph */
+
+.download-text p{
+font-size:13px;
+width:100%;
+margin-bottom:20px;
+font-family: "Maiandra GD", sans-serif;
+}
+
+/* Button */
+
+.download-btn{
+font-size:13px;
+padding:8px 20px;
+}
+
+/* Image */
+
+.download-image{
+justify-content:center;
+}
+
+.download-image img{
+width:180px;
+max-width:100%;
+}
+
+}

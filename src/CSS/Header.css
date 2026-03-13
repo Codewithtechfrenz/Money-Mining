@@ -1,0 +1,215 @@
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ====================
+   HEADER BASE
+==================== */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header after scroll */
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ====================
+   LOGO
+==================== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logo-container img {
+  height: 90px;
+  width: auto;
+  max-height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* ====================
+   STORE BUTTONS
+==================== */
+.store-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.store-links img {
+  height: 42px;
+  max-width: 140px;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 10px;
+}
+
+.store-links img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================
+   LAPTOP L (≤1440px)
+==================== */
+@media (max-width: 1440px) {
+
+  .header {
+    height: 100px;
+  }
+
+  .logo-container img {
+    height: 80px;
+  }
+
+  .store-links img {
+    height: 38px;
+  }
+
+}
+
+/* ====================
+   LAPTOP (≤1024px)
+==================== */
+@media (max-width: 1024px) {
+
+  .header {
+    height: 85px;
+    padding: 0 20px;
+  }
+
+  .logo-container img {
+    height: 65px;
+  }
+
+  .store-links img {
+    height: 34px;
+    max-width: 120px;
+  }
+
+  .store-links {
+    gap: 0.8rem;
+  }
+
+}
+
+/* ====================
+   TABLET (≤768px)
+==================== */
+@media (max-width: 768px) {
+
+  .header {
+    height: 75px;
+    padding: 0 15px;
+  }
+
+  .logo-container img {
+    height: 55px;
+  }
+
+  .store-links img {
+    height: 28px;
+    max-width: 100px;
+  }
+
+  .store-links {
+    gap: 0.6rem;
+  }
+
+}
+
+/* ====================
+   MOBILE L (≤425px)
+==================== */
+@media (max-width: 425px) {
+
+  .header {
+    height: 65px;
+    padding: 0 12px;
+  }
+
+  .logo-container img {
+    height: 45px;
+  }
+
+  .store-links img {
+    height: 24px;
+    max-width: 90px;
+  }
+
+  .store-links {
+    gap: 0.5rem;
+  }
+
+}
+
+/* ====================
+   MOBILE M (≤375px)
+==================== */
+@media (max-width: 375px) {
+
+  .logo-container img {
+    height: 40px;
+  }
+
+  .store-links img {
+    height: 22px;
+    max-width: 80px;
+  }
+
+}
+
+/* ====================
+   MOBILE S (≤320px)
+==================== */
+@media (max-width: 320px) {
+
+  .header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .logo-container img {
+    height: 35px;
+  }
+
+  .store-links img {
+    height: 20px;
+    max-width: 70px;
+  }
+
+  .store-links {
+    gap: 0.4rem;
+  }
+
+}

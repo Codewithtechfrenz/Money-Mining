@@ -1,0 +1,462 @@
+
+/* ============================= */
+/* Layout */
+/* ============================= */
+
+.refund-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #000;
+  padding-left: 320px;
+  font-family: "Maiandra GD", sans-serif;
+}
+
+/* ============================= */
+/* Header */
+/* ============================= */
+
+.refund-header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+  background: #111;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+/* ============================= */
+/* Sidebar */
+/* ============================= */
+
+.refund-sidebar {
+  width: 280px;
+  background: #111;
+  border-radius: 15px;
+  padding: 20px;
+  position: fixed;
+  top: 130px;
+  left: 20px;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+}
+
+.refund-sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.refund-sidebar a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: block;
+  transition: 0.3s;
+}
+
+.refund-sidebar a:hover,
+.refund-sidebar a.active {
+  background: #ffd400;
+  color: #000;
+  transform: translateX(5px);
+}
+
+/* ============================= */
+/* Content */
+/* ============================= */
+
+.refund-content {
+  flex: 1;
+  margin: 130px 40px 40px 40px;
+  padding: 60px;
+  background: #121212;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+}
+
+.refund-content h1 {
+  color: white;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.refund-content h2 {
+  margin-top: 40px;
+  color: #ffd400;
+  border-left: 4px solid #ffd400;
+  padding-left: 10px;
+}
+
+.refund-content p {
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* ============================= */
+/* Refund Page List Spacing       */
+/* ============================= */
+
+.refund-content ul {
+  padding-left: 20px;       /* Indent the list slightly */
+  margin-bottom: 20px;      /* Space after the entire list */
+}
+
+.refund-content ul li {
+  margin-bottom: 12px;      /* Space between each list item */
+  line-height: 1.7;         /* Improves readability */
+}
+
+.refund-content h2 {
+  margin-bottom: 12px;      /* Space between each list item */
+  line-height: 1.7;         /* Improves readability */
+}
+
+/* ============================= */
+/* Continue Button */
+/* ============================= */
+
+.refund-continue {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.refund-btn {
+  background: #ffd400;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.refund-btn:hover {
+  background: #ffbf00;
+  transform: translateY(-3px);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+
+  .refund-layout {
+    padding-left: 0;
+  }
+
+  .refund-sidebar {
+    display: none;
+  }
+
+  .refund-content {
+    margin: 110px 20px;
+    padding: 30px;
+  }
+
+}
+
+/* ===================================================== */
+/* Laptop L - 1440px Responsive */
+/* ===================================================== */
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+
+  /* ================= Layout ================= */
+
+  .refund-layout {
+    padding-left: 340px; /* Extra space for sidebar */
+    gap: 30px;
+  }
+
+  /* ================= Header ================= */
+
+  .refund-header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1200;
+    background: #111;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .refund-header-wrapper .header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  /* ================= Sidebar ================= */
+
+  .refund-sidebar {
+    width: 300px;
+    top: 150px;
+    height: calc(100vh - 200px);
+    padding: 25px;
+  }
+
+  .refund-sidebar ul {
+    gap: 18px;
+  }
+
+  .refund-sidebar a {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .refund-sidebar a.active {
+    box-shadow: 0 6px 18px rgba(255, 212, 0, 0.5);
+  }
+
+  /* ================= Content ================= */
+
+  .refund-content {
+    margin: 150px 60px 60px 60px;
+    padding: 80px;
+    border-radius: 20px;
+  }
+
+  .refund-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .refund-content h2 {
+    font-size: 1.6rem;
+    margin-top: 50px;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  /* ================= Continue Button ================= */
+
+  .refund-continue {
+    margin-top: 80px;
+  }
+
+  .refund-btn {
+    padding: 14px 36px;
+    font-size: 17px;
+    border-radius: 12px;
+  }
+
+}
+
+/* ===================================================== */
+/* Laptop - 1024px */
+/* ===================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  /* Layout adjustments */
+  .refund-layout {
+    padding-left: 280px; /* Keep space for sidebar */
+    gap: 20px;
+  }
+
+  /* Sidebar */
+  .refund-sidebar {
+    display: block; /* Keep sidebar visible */
+    width: 260px;
+    top: 120px;
+    height: calc(100vh - 140px);
+    padding: 20px;
+  }
+
+  .refund-sidebar ul {
+    gap: 12px;
+  }
+
+  .refund-sidebar a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .refund-sidebar a.active {
+    box-shadow: 0 4px 15px rgba(255, 212, 0, 0.4);
+  }
+
+  /* Content */
+  .refund-content {
+    margin: 120px 40px 40px 40px; /* Keep left margin for sidebar */
+    padding: 40px;
+  }
+
+  .refund-content h1 {
+    font-size: 2rem;
+  }
+
+  .refund-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Continue button */
+  .refund-btn {
+    padding: 12px 26px;
+    font-size: 15px;
+  }
+}
+
+/* ===================================================== */
+/* Tablet - 768px */
+/* ===================================================== */
+
+@media screen and (max-width: 768px) {
+
+  .refund-layout {
+    padding-left: 0;
+  }
+
+  .refund-sidebar {
+    display: none;
+  }
+
+  .refund-content {
+    margin: 110px 20px;
+    padding: 30px;
+    border-radius: 15px;
+  }
+
+  .refund-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .refund-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .refund-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ===================================================== */
+/* Mobile L - 425px */
+/* ===================================================== */
+
+@media screen and (max-width: 425px) {
+
+  .refund-content {
+    margin: 100px 15px;
+    padding: 25px;
+  }
+
+  .refund-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .refund-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .refund-content ul {
+    padding-left: 15px;
+  }
+
+  .refund-content ul li {
+    margin-bottom: 10px;
+  }
+
+  .refund-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* ===================================================== */
+/* Mobile M - 375px */
+/* ===================================================== */
+
+@media screen and (max-width: 375px) {
+
+  .refund-content {
+    margin: 90px 12px;
+    padding: 20px;
+  }
+
+  .refund-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .refund-content h2 {
+    font-size: 1rem;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .refund-btn {
+    font-size: 13px;
+    padding: 9px;
+  }
+}
+
+/* ===================================================== */
+/* Mobile S - 320px */
+/* ===================================================== */
+
+@media screen and (max-width: 320px) {
+
+  .refund-content {
+    margin: 80px 10px;
+    padding: 18px;
+  }
+
+  .refund-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .refund-content h2 {
+    font-size: 0.95rem;
+  }
+
+  .refund-content p,
+  .refund-content li {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .refund-content ul {
+    padding-left: 12px;
+  }
+
+  .refund-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+

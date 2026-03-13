@@ -1,0 +1,815 @@
+html,
+body {
+  scroll-behavior: smooth;
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+.terms-layout {
+  display: flex;
+  min-height: 100vh;
+  margin-left: 320px;
+  background: #000;
+  font-family: "Maiandra GD", sans-serif;
+}
+
+/* Fixed header styling for Terms page */
+.terms-header-wrapper .header {
+  background: #111;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.8);
+}
+
+.terms-header-wrapper .header img {
+  max-height: 80px;
+}
+
+/* Sidebar */
+.terms-sidebar {
+  width: 280px;
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px 15px;
+  height: calc(100vh - 160px);
+  position: fixed;
+  left: 20px;
+  top: 130px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+.terms-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.terms-sidebar li {
+  margin-bottom: 8px;
+}
+
+.terms-sidebar a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.terms-sidebar a:hover {
+  background-color: #FFD400;
+  color: #000;
+  transform: translateX(5px);
+}
+
+.terms-sidebar a.active {
+  background-color: #FFD400;
+  color: #000;
+  font-weight: 600;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(255, 212, 0, 0.4);
+}
+
+/* Content */
+.terms-content {
+  flex: 1;
+  padding: 60px;
+  background: #121212;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  margin: 30px;
+  margin-top: 130px;
+  min-height: calc(100vh - 160px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+}
+
+.terms-content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1.6;
+}
+
+.terms-content h2 {
+  margin-top: 40px;
+  margin-bottom: 25px;
+  border-left: 4px solid #FFD400;
+  padding-left: 10px;
+  color: #FFD400;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.terms-content p,
+.terms-content li {
+  color: #ddd;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.terms-content ul {
+  padding-left: 20px;
+}
+
+/* Agreement Section */
+.terms-agreement {
+  margin-top: 50px;
+  padding: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  position: relative;
+  background: #111;
+  border-radius: 12px;
+}
+
+/* Checkbox */
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  gap: 10px;
+  color: #ddd;
+}
+
+.checkbox-container input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.terms-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.accept-btn,
+.decline-btn {
+  padding: 10px 25px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Accept */
+.accept-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.accept-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.accept-btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+/* Decline */
+.decline-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.decline-btn:hover {
+  background-color: #c82333;
+}
+
+/* Floating Glass Popup Download Box */
+.glass-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeInOverlay 0.3s ease;
+}
+
+.glass-popup-card {
+  width: 90%;
+  max-width: 480px;
+  padding: 35px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: popupScale 0.35s ease;
+}
+
+.glass-popup-card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #FFD400;
+}
+
+.glass-popup-card p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.glass-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.glass-popup-yes {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.glass-popup-yes:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(40, 167, 69, 0.4);
+}
+
+.glass-popup-no {
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.glass-popup-no:hover {
+  background: #dc3545;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Contact Section Fix */
+#contact-info {
+  scroll-margin-top: 150px;
+}
+
+#contact-info + p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+#contact-info ~ p:last-of-type {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 212, 0, 0.3);
+  border-left: 5px solid #FFD400;
+  padding: 25px;
+  border-radius: 14px;
+  line-height: 1.8;
+  box-shadow: 0 8px 25px rgba(255, 212, 0, 0.1);
+  font-size: 14px;
+  color: #ddd;
+}
+
+#contact-info ~ p strong {
+  color: #FFD400;
+}
+
+/* Animations */
+@keyframes popupScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================================================== */
+/* ✅ Laptop L - 1440px Responsive Optimization */
+/* ===================================================== */
+
+@media screen and (min-width: 1280px) and (max-width: 1600px) {
+
+  /* Layout spacing adjustment */
+  .terms-layout {
+    margin-left: 300px;      /* Slightly reduce sidebar gap */
+  }
+
+  /* Sidebar improvement */
+  .terms-sidebar {
+    width: 260px;
+    top: 120px;
+    padding: 18px 14px;
+  }
+
+  .terms-sidebar a {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* Content spacing adjustment */
+  .terms-content {
+    padding: 50px;
+    margin: 25px;
+    margin-top: 120px;
+  }
+
+  .terms-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .terms-content h2 {
+    font-size: 1.35rem;
+  }
+
+  /* Buttons */
+  .terms-buttons button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  /* Popup */
+  .glass-popup-card {
+    max-width: 450px;
+    padding: 30px;
+  }
+}
+
+/* ===================================================== */
+/* ✅ Laptop - 1024px Responsive Optimization */
+/* ===================================================== */
+
+@media screen and (min-width: 900px) and (max-width: 1279px) {
+
+  /* Layout */
+  .terms-layout {
+    margin-left: 250px; /* Reduce sidebar gap */
+  }
+
+  /* Sidebar */
+  .terms-sidebar {
+    width: 220px;
+    top: 110px;
+    padding: 15px 12px;
+  }
+
+  .terms-sidebar a {
+    font-size: 12.5px;
+    padding: 6px 8px;
+  }
+
+  /* Content */
+  .terms-content {
+    padding: 40px;
+    margin: 20px;
+    margin-top: 110px;
+  }
+
+  .terms-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .terms-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  /* Buttons */
+  .terms-buttons button {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  /* Popup */
+  .glass-popup-card {
+    max-width: 380px;
+    padding: 25px;
+  }
+}
+
+/* ===================================================== */
+/* ✅ Tablet - 768px (Hide Sidebar Completely) */
+/* ===================================================== */
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+
+  /* Layout becomes vertical */
+  .terms-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* Hide Sidebar on Tablet */
+  .terms-sidebar {
+    display: none;
+  }
+
+  /* Header stays fixed */
+  .terms-header-wrapper {
+    position: fixed;
+  }
+
+  /* Content takes full width */
+  .terms-content {
+    margin: 20px;
+    padding: 30px;
+    margin-top: 120px; /* Avoid header overlap */
+    border-radius: 10px;
+  }
+
+  .terms-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .terms-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Buttons */
+  .terms-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .terms-buttons button {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  /* Popup */
+  .glass-popup-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+/* ===================================================== */
+/* ✅ Mobile L - 425px Responsive Optimization */
+/* ===================================================== */
+
+@media screen and (max-width: 599px) {
+
+  /* ================= Layout ================= */
+
+  .terms-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Header ================= */
+
+  .terms-header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+
+  /* ================= Hide Sidebar ================= */
+
+  .terms-sidebar {
+    display: none;
+  }
+
+  /* ================= Content ================= */
+
+  .terms-content {
+    margin: 15px;
+    padding: 20px;
+    margin-top: 110px; /* Avoid header overlap */
+    border-radius: 10px;
+  }
+
+  .terms-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .terms-content h2 {
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .terms-content ul {
+    padding-left: 15px;
+  }
+
+  /* ================= Buttons ================= */
+
+  .terms-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .terms-buttons button {
+    width: 100%;
+    font-size: 12.5px;
+    padding: 9px;
+  }
+
+  /* ================= Checkbox ================= */
+
+  .checkbox-container {
+    font-size: 13px;
+  }
+
+  .checkbox-container input {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ================= Popup ================= */
+
+  .glass-popup-card {
+    max-width: 95%;
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .glass-popup-card h3 {
+    font-size: 18px;
+  }
+
+  .glass-popup-card p {
+    font-size: 12.5px;
+  }
+
+  .glass-popup-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .glass-popup-buttons button {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+/* ===================================================== */
+/* ✅ Mobile M - 375px Responsive Optimization */
+/* ===================================================== */
+
+@media screen and (max-width: 375px) {
+
+  /* ================= Layout ================= */
+
+  .terms-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Header ================= */
+
+  .terms-header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+
+  /* ================= Sidebar ================= */
+
+  .terms-sidebar {
+    display: none; /* Keep sidebar hidden */
+  }
+
+  /* ================= Content ================= */
+
+  .terms-content {
+    margin: 10px;
+    padding: 16px;
+    margin-top: 100px; /* Avoid header overlap */
+    border-radius: 8px;
+  }
+
+  .terms-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .terms-content h2 {
+    font-size: 0.95rem;
+    margin-top: 20px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .terms-content ul {
+    padding-left: 12px;
+  }
+
+  /* ================= Buttons ================= */
+
+  .terms-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .terms-buttons button {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* ================= Checkbox ================= */
+
+  .checkbox-container {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .checkbox-container input {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* ================= Popup ================= */
+
+  .glass-popup-card {
+    max-width: 96%;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .glass-popup-card h3 {
+    font-size: 16px;
+  }
+
+  .glass-popup-card p {
+    font-size: 12px;
+  }
+
+  .glass-popup-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .glass-popup-buttons button {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+/* ===================================================== */
+/* ✅ Mobile S - 320px Responsive Optimization */
+/* ===================================================== */
+
+@media screen and (max-width: 320px) {
+
+  /* ================= Layout ================= */
+
+  .terms-layout {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  /* ================= Header ================= */
+
+  .terms-header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+  }
+
+  /* ================= Sidebar ================= */
+
+  .terms-sidebar {
+    display: none; /* Hide sidebar */
+  }
+
+  /* ================= Content ================= */
+
+  .terms-content {
+    margin: 6px;
+    padding: 14px;
+    margin-top: 95px; /* Avoid header overlap */
+    border-radius: 6px;
+  }
+
+  .terms-content h1 {
+    font-size: 1.1rem;
+  }
+
+  .terms-content h2 {
+    font-size: 0.85rem;
+    margin-top: 18px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+
+  .terms-content ul {
+    padding-left: 10px;
+  }
+
+  /* ================= Buttons ================= */
+
+  .terms-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .terms-buttons button {
+    width: 100%;
+    font-size: 11.5px;
+    padding: 7px;
+    border-radius: 5px;
+  }
+
+  /* ================= Checkbox ================= */
+
+  .checkbox-container {
+    font-size: 11.5px;
+    gap: 5px;
+  }
+
+  .checkbox-container input {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* ================= Popup ================= */
+
+  .glass-popup-card {
+    max-width: 98%;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .glass-popup-card h3 {
+    font-size: 15px;
+  }
+
+  .glass-popup-card p {
+    font-size: 11.5px;
+  }
+
+  .glass-popup-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .glass-popup-buttons button {
+    width: 100%;
+    font-size: 11.5px;
+    padding: 7px;
+  }
+}
+
+
+
+
