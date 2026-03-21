@@ -196,7 +196,7 @@ const handleDecline = () => {
           <p>By using the Platform, you acknowledge and accept that:</p>
           <ul>
             <li>Investments are subject to market volatility</li>
-            <li>Returns are not guaranteed</li>
+            <li>Returns are guaranteed</li>
             <li>You may lose some or all of your invested capital</li>
             <li>Regulatory or economic changes may affect performance</li>
           </ul>
